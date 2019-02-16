@@ -19,9 +19,8 @@ public class TestJob implements Job {
         if (data.containsKey("count")) {
             count = data.getInt("count");
         }
-        data.put("count", count++);
+        data.put("count", ++count);
 
-        logger.info("start");
         logger.info("--------job " + context.getJobDetail().getKey().getName() + " ...  count: " + count
                 + " time: " + System.currentTimeMillis());
     }
